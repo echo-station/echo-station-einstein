@@ -11,18 +11,30 @@ tilemap:
 entities:
 - proto: ""
   entities:
+  - uid: 30
+    components:
+    - type: MetaData
+      name: Map Entity
+    - type: Transform
+    - type: Map
+      mapPaused: True
+    - type: PhysicsMap
+    - type: GridTree
+    - type: MovedGrids
+    - type: Broadphase
+    - type: OccluderTree
   - uid: 181
     components:
     - type: MetaData
       name: NT-Reclaimer
     - type: Transform
       pos: 2.2710133,-2.4148211
-      parent: invalid
+      parent: 30
     - type: MapGrid
       chunks:
         -1,0:
           ind: -1,0
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAMwAAAAAAMwAAAAAAWQAAAAADWQAAAAADeQAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAMwAAAAAAMwAAAAAAeQAAAAAAWQAAAAABWQAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACeQAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAAWQAAAAABWQAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAACeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAWQAAAAABeQAAAAAAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAMwAAAAAAMwAAAAAAWQAAAAADWQAAAAADWQAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAMwAAAAAAMwAAAAAAWQAAAAAAWQAAAAABWQAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAACWQAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAWQAAAAAAWQAAAAABWQAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAACeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAWQAAAAABeQAAAAAAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         0,-1:
           ind: 0,-1
@@ -512,6 +524,32 @@ entities:
       shakeTimes: 10
     - type: GasTileOverlay
     - type: GridPathfinding
+- proto: AirAlarm
+  entities:
+  - uid: 176
+    components:
+    - type: Transform
+      pos: -4.5,0.5
+      parent: 181
+    - type: DeviceList
+      configurators:
+      - invalid
+      devices:
+      - 26
+      - 152
+      - 174
+      - 163
+    - type: AtmosDevice
+      joinedGrid: 181
+- proto: AirCanister
+  entities:
+  - uid: 175
+    components:
+    - type: Transform
+      pos: -4.5,-4.5
+      parent: 181
+    - type: AtmosDevice
+      joinedGrid: 181
 - proto: AirlockCargoGlass
   entities:
   - uid: 29
@@ -519,7 +557,7 @@ entities:
     - type: Transform
       pos: -2.5,0.5
       parent: 181
-  - uid: 127
+  - uid: 40
     components:
     - type: Transform
       pos: -1.5,0.5
@@ -580,6 +618,16 @@ entities:
     components:
     - type: Transform
       pos: -5.5,-1.5
+      parent: 181
+  - uid: 134
+    components:
+    - type: Transform
+      pos: 1.5,2.5
+      parent: 181
+  - uid: 135
+    components:
+    - type: Transform
+      pos: 1.5,1.5
       parent: 181
 - proto: BlastDoorExterior1
   entities:
@@ -888,9 +936,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,5.5
       parent: 181
-- proto: ComputerCargoOrders
+- proto: ComputerFrame
   entities:
-  - uid: 153
+  - uid: 127
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -902,6 +950,147 @@ entities:
     components:
     - type: Transform
       pos: -2.5,6.5
+      parent: 181
+- proto: GasPassiveVent
+  entities:
+  - uid: 146
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,5.5
+      parent: 181
+    - type: AtmosDevice
+      joinedGrid: 181
+- proto: GasPipeBend
+  entities:
+  - uid: 153
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,-4.5
+      parent: 181
+  - uid: 157
+    components:
+    - type: Transform
+      pos: -2.5,2.5
+      parent: 181
+  - uid: 159
+    components:
+    - type: Transform
+      pos: -1.5,5.5
+      parent: 181
+- proto: GasPipeStraight
+  entities:
+  - uid: 133
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,4.5
+      parent: 181
+  - uid: 137
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,2.5
+      parent: 181
+  - uid: 139
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,3.5
+      parent: 181
+  - uid: 148
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,5.5
+      parent: 181
+  - uid: 149
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,5.5
+      parent: 181
+  - uid: 150
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,5.5
+      parent: 181
+  - uid: 155
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-3.5
+      parent: 181
+  - uid: 158
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,-4.5
+      parent: 181
+  - uid: 160
+    components:
+    - type: Transform
+      pos: -2.5,1.5
+      parent: 181
+  - uid: 161
+    components:
+    - type: Transform
+      pos: -2.5,0.5
+      parent: 181
+  - uid: 162
+    components:
+    - type: Transform
+      pos: -2.5,-0.5
+      parent: 181
+  - uid: 164
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-2.5
+      parent: 181
+  - uid: 166
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-1.5
+      parent: 181
+  - uid: 170
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-0.5
+      parent: 181
+  - uid: 171
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,0.5
+      parent: 181
+  - uid: 172
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,1.5
+      parent: 181
+  - uid: 177
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,1.5
+      parent: 181
+  - uid: 178
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,0.5
+      parent: 181
+  - uid: 179
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,-0.5
       parent: 181
 - proto: GasPort
   entities:
@@ -921,21 +1110,65 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.5,-4.5
       parent: 181
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 176
     - type: AtmosDevice
       joinedGrid: 181
-- proto: GeneratorBasic
-  entities:
-  - uid: 40
+  - uid: 152
     components:
     - type: Transform
-      pos: -1.5,-5.5
+      rot: 1.5707963267948966 rad
+      pos: -3.5,2.5
       parent: 181
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 176
+    - type: AtmosDevice
+      joinedGrid: 181
+- proto: GasVentScrubber
+  entities:
+  - uid: 163
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,-1.5
+      parent: 181
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 176
+    - type: AtmosDevice
+      joinedGrid: 181
+  - uid: 174
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,2.5
+      parent: 181
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 176
+    - type: AtmosDevice
+      joinedGrid: 181
 - proto: GeneratorBasic15kW
   entities:
   - uid: 67
     components:
     - type: Transform
       pos: -1.5,-6.5
+      parent: 181
+  - uid: 131
+    components:
+    - type: Transform
+      pos: -1.5,-5.5
       parent: 181
 - proto: GravityGeneratorMini
   entities:
@@ -1146,11 +1379,6 @@ entities:
       parent: 181
 - proto: WallSolid
   entities:
-  - uid: 30
-    components:
-    - type: Transform
-      pos: -3.5,0.5
-      parent: 181
   - uid: 85
     components:
     - type: Transform
@@ -1270,6 +1498,11 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-2.5
+      parent: 181
+  - uid: 173
+    components:
+    - type: Transform
+      pos: -3.5,0.5
       parent: 181
 - proto: WallSolidRust
   entities:
