@@ -19,7 +19,7 @@ public sealed class AnomalySpawnRule : StationEventSystem<AnomalySpawnRuleCompon
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
             Filter.Broadcast(),
-            "anomaly-spawn-event-announcement",
+            "station-event-anomaly-spawn-announcement",
             null,
             Color.FromHex("#18abf5"),
             null, null,
