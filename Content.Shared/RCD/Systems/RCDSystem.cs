@@ -211,7 +211,7 @@ public class RCDSystem : EntitySystem
         {
             BreakOnDamage = true,
             BreakOnHandChange = true,
-            BreakOnMove = true,
+            BreakOnUserMove = true,
             AttemptFrequency = AttemptFrequency.EveryTick,
             CancelDuplicate = false,
             BlockDuplicate = false
