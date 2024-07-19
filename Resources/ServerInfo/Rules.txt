@@ -1,12 +1,8 @@
-﻿﻿[color=#ff0000]YOU MUST BE AT LEAST 17 YEARS OF AGE TO PLAY ON DELTA-V SERVERS. ANY USERS SUSPECTED OF BEING UNDER 17 YEARS OF AGE WILL BE BANNED UNTIL THEY ARE OF AGE.[/color]
+﻿[color=#ff0000]YOU MUST BE AT LEAST 17 YEARS OF AGE TO PLAY ON ECHO STATION SERVERS. ANY USERS SUSPECTED OF BEING UNDER 17 YEARS OF AGE WILL BE BANNED UNTIL THEY ARE OF AGE.[/color]
 
 [color=#ff0000]DISCONNECTING FROM OR IGNORING/EVADING ADMIN-HELPS WILL RESULT IN AN APPEAL ONLY BAN.[/color]
 
-[color=#ff0000]THE USAGE OF ANY THIRD-PARTY APPLICATIONS/SCRIPTS/CLIENT MODIFICATIONS TO GAIN AN ADVANTAGE, AVOID INTENDED GAME/SERVER MECHANICS, OR TO HARM SERVER INFRASTRUCTURE IS STRICTLY PROHIBITED. ANY AND ALL INSTANCES OF THIS WILL BE MET WITH AN APPEAL-ONLY BAN.[/color]
-
-[color=#00ff00]Rules Update 11Mar2024 - Added Cryo Rules, Changed the Prisoner Rule, Expanded on EORG, added rules aimed at meta-grudging/vitriolic OOC/LOOC, and clarified part of Rule 6[/color]
-
-[color=#ffff00]Delta-V is a Medium Roleplay server. Try to immerse yourself into your character. This includes doing your job, interacting with your fellow crewmates, and using roleplay as the primary vessel to play the game. MRP places less emphasis on “winning” and more on just telling a story.[/color]
+[color=#ffff00]Echo Station is a Medium-High Roleplay server. You are expected to immerse yourself into your character. This includes doing your job, interacting with your fellow crewmates, and using roleplay as the primary vessel to play the game. We place less emphasis on “winning” and more on just telling a story.[/color]
 
 If you have any questions about these rules, please use the admin help (ahelp) menu by hitting F1 in-game or clicking the “Ahelp” button in the lobby.
 
@@ -17,8 +13,7 @@ If you have any questions about these rules, please use the admin help (ahelp) m
 [color=#a4885c]1.[/color] Erotic Roleplay (ERP), erotic content, or 18+ sexual content is [color=#ff0000]not allowed under any circumstance[/color]. This includes comments not explicitly sexual in nature that contain words, phrases, or ideations that are deemed inappropriate. [color=#ff0000]If roleplay reaches a point where it has become sexual and/or uncomfortable, immediately stop and contact an administrator.[/color]
 
 [color=#a4885c]2.[/color] Follow the server expectations
-    - Do not cheat.
-    - Do not abuse glitches and exploits. [color=#ff0000]We have zero tolerance for abusing exploits/bugs. If you’re not sure, ask an admin.[/color] Otherwise, please use the #bug-reports channel on the Discord to report the bug.
+    - Do not cheat or abuse glitches and exploits. If you’re not sure what you're doing is okay, ask an admin.[/color]
     - If you are banned from a role or department, you may not play that role. This includes seeking or accepting promotions into roles you are banned from.
     - Do not make yourself a major problem/annoyance/disruption for the crew while not being an antagonist (i.e. self-antagging).
     - Do not make yourself a major problem/annoyance/disruption for one specific crew member in a way that would actively detract from the other player's enjoyment of the shift.
@@ -36,7 +31,7 @@ If you have any questions about these rules, please use the admin help (ahelp) m
     - Do not spam.
     - Do not advertise.
     - Be respectful towards other players in LOOC and OOC channels, and avoid making others uncomfortable. This can range anywhere from starting arguments to personal attacks against others, depending on the context.
-    - Do not use netspeak in character (i.e. btw, lmfao).
+    - Do not use netspeak in character (i.e. btw, lmfao, u, wtf).
     - Do not use the Emotes channel to bypass an inability to speak. This includes examples like "motions for you to put parmesan THEN sauce on the spaghetti," "im friendly," and "huh weird looks like I can't type."
     - Use the LOOC and OOC channels properly. Don’t speak of in-character matters in those channels unless you’re asking questions related to in-game concepts.
        * DO NOT use in-character channels to bypass a lack of ability to use OOC/LOOC chats (e.g. "Huh, wonder where captain went? *OOC* He probably left to get dinner lol"). This will result in an immediate dewhitelist.
@@ -45,8 +40,8 @@ If you have any questions about these rules, please use the admin help (ahelp) m
 
 [color=#a4885c]4.[/color] Follow Metagaming guidelines
     - If you die and get revived, do not act on things you saw while you were dead.
-    - Do not engage in meta-communications. This includes using chat channels outside of what is available in-game to communicate with other players in the same game.
-    - Players are allowed to have in-character relationships (friends, enemies, or otherwise), however they cannot be used as a reason to grant or deny things based exclusively on having a relationship with one another(i.e. Meta-Friending).
+    - Do not engage in meta-communications. This includes using chat channels outside what is available in-game to communicate with other players in the same game.
+    - Players are allowed to have in-character relationships (friends, enemies, or otherwise), however they cannot be used as a reason to grant or deny things based exclusively on having a relationship with one another (i.e. Meta-Friending).
     - You are allowed to have knowledge of past experiences with someone else in prior shifts. This does not give you permission to hold a grudge against someone that results in you treating them differently in an unfair way (i.e. Meta-Grudging).
     - Specific players who were antagonists in previous rounds must not be treated differently because of it.
     - Do not "Antag Roll." This is the act of joining rounds for the purpose of seeing if you joined as an antagonist, and leaving soon after if not. Players who have a history of this behavior will have their whitelist revoked and/or face a ban.
@@ -57,7 +52,7 @@ If you have any questions about these rules, please use the admin help (ahelp) m
 
 Players that are revived by using a defibrillator CAN recall what killed them and do not have any forgetfulness about what happened while they were alive.
 
-[color=#ff0000]Please report players who violate this rule.[/color]
+[color=#440000]Please report players who violate this rule.[/color]
 
 [color=#a4885c]6.[/color] All constructed/summoned beings that have laws are bound by those laws and must abide by them.
     - If a being has a master, they MUST follow their master's orders.
@@ -99,6 +94,9 @@ Players that are revived by using a defibrillator CAN recall what killed them an
     - Don't manufacture weapons, bombs, or deadly poisons before you know of any reason you would need them.
     - Don't preemptively hide antagonist objectives or preemptively secure them with higher security than normally required.
     - Don't manufacture or prepare things for the "end of the round" when the shuttle docks with Central Command.
+
+[color=#4287f5]==== COMMAND RULES ====[/color]
+
 
 [color=#ff0000]SECURITY & COMMAND RULES[/color]
 These rules apply to any individual who is promoted or is acting in the place of a Security/Command role (unless they are an antagonist).
