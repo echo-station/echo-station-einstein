@@ -105,10 +105,10 @@
     makeSentient: true
     allowMovement: true
     allowSpeech: true
-    requirements:
-    - !type:DepartmentTimeRequirement
-      department: Epistemics
-      time: 14400 # DeltaV - 4 hours
+#    requirements:
+#    - !type:DepartmentTimeRequirement
+#      department: Epistemics
+#      time: 14400 # DeltaV - 4 hours
 
 - type: entity
   parent: WelderExperimental
