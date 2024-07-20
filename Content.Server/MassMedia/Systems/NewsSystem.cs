@@ -4,6 +4,7 @@ using Content.Server.CartridgeLoader;
 using Content.Server.CartridgeLoader.Cartridges;
 using Content.Server.GameTicking;
 using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography;
 using Content.Server.Access.Systems;
 using Content.Server.Popups;
 using Content.Shared.Access.Components;
@@ -25,6 +26,7 @@ namespace Content.Server.MassMedia.Systems;
 
 public sealed class NewsSystem : SharedNewsSystem
 {
+    [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
@@ -96,7 +98,7 @@ public sealed class NewsSystem : SharedNewsSystem
             return;
 
         var article = articles[msg.ArticleNum];
-        if (CheckDeleteAccess(article, ent, actor))
+        if (CanUse(actor, ent))
         {
             _adminLogger.Add(
                 LogType.Chat, LogImpact.Medium,
@@ -141,7 +143,7 @@ public sealed class NewsSystem : SharedNewsSystem
         if (msg.Session.AttachedEntity is not { } author)
             return;
 
-        if (!_accessReader.FindStationRecordKeys(author, out _))
+        if (!CanUse(author, ent.Owner))
             return;
 
         string? authorName = null;
@@ -303,21 +305,13 @@ public sealed class NewsSystem : SharedNewsSystem
         }
     }
 
-    private bool CheckDeleteAccess(NewsArticle articleToDelete, EntityUid device, EntityUid user)
+    private bool CanUse(EntityUid user, EntityUid console)
     {
-        if (TryComp<AccessReaderComponent>(device, out var accessReader) &&
-            _accessReader.IsAllowed(user, device, accessReader))
-            return true;
-
-        if (articleToDelete.AuthorStationRecordKeyIds == null || articleToDelete.AuthorStationRecordKeyIds.Count == 0)
-            return true;
-
-        return _accessReader.FindStationRecordKeys(user, out var recordKeys)
-               && StationRecordsToNetEntities(recordKeys).Intersect(articleToDelete.AuthorStationRecordKeyIds).Any();
+        if (TryComp<AccessReaderComponent>(console, out var accessReaderComponent))
+        {
+            return _accessReaderSystem.IsAllowed(user, console, accessReaderComponent);
+        }
+        return true;
     }
 
-    private ICollection<(NetEntity, uint)> StationRecordsToNetEntities(IEnumerable<StationRecordKey> records)
-    {
-        return records.Select(record => (GetNetEntity(record.OriginStation), record.Id)).ToList();
-    }
 }
