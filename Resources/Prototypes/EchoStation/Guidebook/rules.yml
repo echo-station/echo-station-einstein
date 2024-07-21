@@ -1,0 +1,14 @@
+﻿- type: guideEntry
+  id: EchoStationRuleset
+  name: guide-entry-echo-station-rules
+  text: "/ServerInfo/Guidebook/EchoStation/Rules/EchoStationRules.xml"
+  priority: -2
+  ruleEntry: true
+  children:
+    - EchoStationRule1
+
+- type: guideEntry
+  id: EchoStationRule1
+  name: guide-entry-echo-station-rule-1
+  text: "/ServerInfo/Guidebook/EchoStation/Rules/Test.xml"
+  ruleEntry: true
