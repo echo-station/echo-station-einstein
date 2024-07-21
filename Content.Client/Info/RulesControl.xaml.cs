@@ -36,7 +36,7 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
     private void SetGuide(ProtoId<GuideEntryPrototype>? entry = null, bool addToPrior = true)
     {
         var coreEntry = UserInterfaceManager.GetUIController<InfoUIController>().GetCoreRuleEntry();
-        entry ??= coreEntry;
+        entry ??= coreEntry.Id;
 
         Scroll.SetScrollValue(default);
         RulesContainer.Children.Clear();
